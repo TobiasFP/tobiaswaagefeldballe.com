@@ -1,0 +1,32 @@
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" type="overlay">
+      <ion-content>
+        <ion-list id="inbox-list">
+          <ion-menu-toggle auto-hide="false">
+            <ion-item routerDirection="root" routerLink="/resume" lines="none" detail="false"
+              routerLinkActive="selected">
+              <ion-icon slot="start" ios='school-outline' md='school-sharp'></ion-icon>
+              <ion-label>Resume</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false">
+            <ion-item routerDirection="root" routerLink="/code" lines="none" detail="false"
+              routerLinkActive="selected">
+              <ion-icon slot="start" ios='code-outline' md='code-sharp'></ion-icon>
+              <ion-label>Code examples</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false">
+            <ion-item routerDirection="root" routerLink="/tellie" lines="none" detail="false"
+              routerLinkActive="selected">
+              <ion-icon slot="start" ios='tv-outline' md='tv-sharp'></ion-icon>
+              <ion-label>Tellie</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

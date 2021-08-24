@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-menu-button autoHide="false" slot="start"></ion-menu-button>
+    <ion-title>Story</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Default Searchbar -->
+  <ion-item>
+    <ion-card style="width: 100%" *ngIf="story">
+      <ion-card-header>
+        <ion-card-title>
+          {{storyChannel}} -
+          {{ story.Programme }}
+        </ion-card-title>
+        <ion-card-subtitle>
+          {{ searchEngineService.convertEpochToLocalDate(storyTime) }}
+        </ion-card-subtitle>
+      </ion-card-header>
+
+        <ion-card-content> {{ story.Text }} </ion-card-content>
+    </ion-card>
+  </ion-item>
+</ion-content>

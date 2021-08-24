@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModal()">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title> {{ title }}</ion-title>
+    <span slot="end" *ngIf="titleImg"> <img class="titleImg" [src]="titleImg" /></span>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card >
+    <ion-card-content> {{ desc }} <br /> <a [href]="readMore"> Read more here  </a></ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content>
+      <h2> Technologies used: </h2>
+    </ion-card-content>
+    <span *ngFor="let tech of techs">
+      <app-techs3d [img]="tech.img"></app-techs3d>
+    </span>
+    <p> * Extra info: The above rotary icons are rendered with WebGL</p>
+  </ion-card>
+</ion-content>

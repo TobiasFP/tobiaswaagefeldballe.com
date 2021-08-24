@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-menu-button slot="start"></ion-menu-button>
+    <ion-title>Tellie</ion-title>
+    <span slot="end"> <img class="titleImg" src="https://telliegence.tellie.dk/assets/icon/tellie.png" /></span>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Default Searchbar -->
+  <ion-searchbar
+    [value]="searchQuery"
+    (ionInput)="onSearch($event.target.value)"
+  ></ion-searchbar>
+  <ion-item *ngFor="let hit of hitList.Stories">
+    <ion-card style="width: 100%;"   [routerLink]="['/story/lines', hit.ID, hit.Channel, hit.Time]">
+      <ion-card-header>
+        <ion-card-title>{{hit.Channel}}</ion-card-title> 
+        <ion-card-subtitle
+          > {{ searchEngineService.convertEpochToLocalDate(hit.Time)
+          }}</ion-card-subtitle
+        >
+      </ion-card-header>
+
+      <ion-card-content> {{ hit.Text }} </ion-card-content>
+    </ion-card>
+  </ion-item>
+
+</ion-content>

@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModal()">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title> Welcome</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      This is my site. I made it to demonstrate my skills, and to learn some new
+      (Though I guess you cannot consider Lisp new). On this site, I might come
+      off sounding arrogant, in an attempt to be funny but i assure you, I am
+      not funny. Anyway, in order to show you the right information, please
+      choose why you are here. <br />
+      <ion-row>
+        <ion-col>
+          <ion-button class="center-button" (click)="thankYouLordINeedTheMoney()">
+            I might want to hire you, <br />
+            but I am not very technical
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button class="center-button" (click)="cleverBoy()">
+            I will of course want to hire you, <br />
+            as I too know Strongly typed languages are superior.
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button class="center-button" (click)="showGrace()">
+            I am writing a "Person of the year" <br />
+            article about you in TIME magazine.
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <br /> <br />
+    </ion-card-content>
+  </ion-card>
+</ion-content>
