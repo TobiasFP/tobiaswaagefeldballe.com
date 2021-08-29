@@ -24,11 +24,13 @@
     "@ionic-native/core": "^5.34.0",
     "@ionic-native/native-storage": "^5.34.0",
     "@ionic/angular": "^5.5.2",
+    "golang-wasm-async-loader": "^0.4.1",
     "rxjs": "~6.6.0",
     "three": "^0.130.1",
     "three-orbitcontrols": "^2.110.3",
     "three-orbitcontrols-ts": "^0.1.2",
     "tslib": "^2.2.0",
+    "web-component-essentials": "^0.0.4",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
@@ -63,6 +65,12 @@
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "typescript": "~4.2.4"
+  },
+  "browser": {
+    "crypto": false,
+    "fs": false,
+    "os": false,
+    "util": false
   },
   "description": "A resume and show off project"
 }

@@ -10,7 +10,7 @@
   <!-- Default Searchbar -->
   <ion-searchbar
     [value]="searchQuery"
-    (ionInput)="onSearch($event.target.value)"
+    (ionInput)="onSearch($event.target)"
   ></ion-searchbar>
   <ion-item *ngFor="let hit of hitList.Stories">
     <ion-card style="width: 100%;"   [routerLink]="['/story/lines', hit.ID, hit.Channel, hit.Time]">

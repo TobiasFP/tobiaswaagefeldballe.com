@@ -4,7 +4,7 @@ import {
   ExplainerComponent,
   tech,
 } from '../../components/tellie/explainer/explainer.component';
-
+// import 'src/assets/webcomponents/app-resume.js';
 @Component({
   selector: 'app-resume',
   templateUrl: './resume.page.html',
@@ -13,7 +13,9 @@ import {
 export class ResumePage implements OnInit {
   constructor(public modalController: ModalController) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log('Test');
+  }
 
   ionViewDidEnter() {
     this.presentExplainerModal();

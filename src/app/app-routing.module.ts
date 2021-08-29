@@ -27,6 +27,14 @@ const routes: Routes = [
     path: 'start',
     loadChildren: () => import('./pages/start/start.module').then( m => m.StartPageModule)
   },
+  {
+    path: 'speedtest',
+    loadChildren: () => import('./pages/speedtest/speedtest.module').then( m => m.SpeedtestPageModule)
+  },
+  {
+    path: 'goodbaad',
+    loadChildren: () => import('./pages/goodbaad/goodbaad.module').then( m => m.GoodbaadPageModule)
+  },
 ];
 
 @NgModule({

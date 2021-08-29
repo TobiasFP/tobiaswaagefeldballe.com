@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AlertController, ModalController } from '@ionic/angular';
-
 @Component({
   selector: 'app-select-skill',
   templateUrl: './select-skill.component.html',
@@ -9,15 +9,18 @@ import { AlertController, ModalController } from '@ionic/angular';
 export class SelectSkillComponent implements OnInit {
   constructor(
     private alertCtrl: AlertController,
-    public modalController: ModalController
+    public modalController: ModalController,
+    private router: Router
   ) {}
 
   ngOnInit() {}
 
   thankYouLordINeedTheMoney() {
+    this.router.navigateByUrl('/resume');
     this.modalController.dismiss();
   }
   cleverBoy() {
+    this.router.navigateByUrl('/resume');
     this.modalController.dismiss();
   }
 
@@ -29,5 +32,10 @@ export class SelectSkillComponent implements OnInit {
       .then((alert) => {
         alert.present();
       });
+  }
+
+
+  closeModal() {
+    this.modalController.dismiss();
   }
 }

@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <h1>Webtechnology comparison</h1>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col size="4" offset="1">
+      <h2>Pure Javascript</h2>
+      <a href=""> See the code </a> <br />
+      <p>
+        This benchmark tests how fast your browsers javascript engine can
+        process loops in pure javascript.
+      </p>
+      <ion-button id="gopherJsButton" (click)="runJavascript()">Test</ion-button>
+      {{ timePassedJs }} ms
+    </ion-col>
+    <ion-col size="4" offset="2">
+      <h2>Wasm compiled from GoLang</h2>
+      <a href=""> See the code </a> <br />
+      <p>
+        This benchmark tests how fast your browsers WebAssembly engine can
+        process loops.
+      </p>
+      <ion-button (click)="runWasm()">Test</ion-button>
+      {{ timePassedWasm }} ms
+
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="4" offset="1">
+      <h2>Golang on a backend server (A Raspberry pi 4/4gbram)</h2>
+      <a href=""> See the code </a> <br />
+      <p>
+        This benchmark tests how the same code is executed on a single core of a
+        Raspberry Pi 4, run on the backend server in pure GoLang.
+      </p>
+      <ion-button (click)="runGoLang()">Test</ion-button>
+      {{ timePassedGo }} ms
+
+    </ion-col>
+    <ion-col size="4" offset="2">
+      <h2>Fortran on a backend server (A Raspberry pi 4/4gbram)</h2>
+      <a href=""> See the code </a> <br />
+      <p>
+        This benchmark tests how an implementation of the GoLang code rewritten
+        in Fortran is executed on a single core of a Raspberry Pi 4, run on the
+        backend server.
+      </p>
+      <ion-button (click)="runFortran()">Test</ion-button>
+      {{ timePassedFortran }} ms
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="6" offset="3">
+      <h2>Conclusions</h2>
+      <p> 
+        A bit surprisingly, we can conclude that WASM is the least performant of the bunch of tests (Especially since
+        your computer should be able to outperform a Raspberry Pi). The reason as to why WASM is performing so poorly
+        compared to Javascript is probably in the fact that Javascript loops have been heavily optimised.
+        In regards to comparing WASM with Golang and Fortran, I am surprised, since WASM is supposed to be a very
+        optimised, byte-code intermediate engine, optimised a lot like Java, where we should only see little overhead
+        when it comes to Loop benchmarking. The reason behind this may be the way GoLang is transpiled to WASM byte-code.
+        It comes as no surprise that GoLang and Fortran are comparable in speed, as they both are compiled languages.
+
+      </p>
+      <p>
+        It comes as a huge surprise to me that when running the Javascript and Wasm tests in Chrome, the browser
+        simply outperforms both Firefox and Safari. It is a bit understandable with all the efforts that Google has made
+        in making their Javascript V8 engine very optimised.
+      </p>
+    </ion-col>
+  </ion-row>
+</ion-content>
+
+<script src="assets/webcomponents/speedtest/speedtest.js"></script>

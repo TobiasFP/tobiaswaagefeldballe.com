@@ -82,8 +82,8 @@ export class TelliePage implements OnInit {
 
   ngOnInit() {}
 
-  onSearch(eventTargetValue) {
-    this.searchQuery = eventTargetValue;
+  onSearch(eventTarget: any) {
+    this.searchQuery = eventTarget.value;
     console.log(this.searchQuery);
     this.search(this.searchQuery);
   }

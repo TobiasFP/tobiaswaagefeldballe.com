@@ -117,3 +117,18 @@ ion-note {
 ion-item.selected {
   --color: var(--ion-color-primary);
 }
+
+.goodbaad:hover .good{
+  display: none;
+}
+.goodbaad:hover .bad{
+  display: block;
+}
+
+.good {
+  display: block;
+}
+.bad {
+  display: none;
+}
+
