@@ -1,53 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Dem som ikke hopper, de elsker wordpress.!</title>
-    <script src="https://unpkg.com/vue"></script>
-    <script src="assets/webcomponents/vue-resume.js"></script>
-    <script src="assets/webcomponents/speedtest/wasm_exec.js"></script>
-    <script>
-      if (WebAssembly) {
-        // WebAssembly.instantiateStreaming is not currently available in Safari
-        if (WebAssembly && !WebAssembly.instantiateStreaming) {
-          // polyfill
-          WebAssembly.instantiateStreaming = async (resp, importObject) => {
-            const source = await (await resp).arrayBuffer();
-            return await WebAssembly.instantiate(source, importObject);
-          };
-        }
 
-        const go = new Go();
-        WebAssembly.instantiateStreaming(
-          fetch("assets/webcomponents/speedtest/main.wasm"),
-          go.importObject
-        ).then((result) => {
-          console.log("Running wasm");
-          go.run(result.instance);
-        });
-      } else {
-        console.log("WebAssembly is not supported in your browser");
+<head>
+  <meta charset="utf-8" />
+  <title>Dem som ikke hopper, de elsker wordpress.!</title>
+  <script src="https://unpkg.com/vue"></script>
+  <script src="assets/webcomponents/vue-resume.js"></script>
+  <script src="assets/webcomponents/speedtest/wasm_exec.js"></script>
+  <script>
+    if (WebAssembly) {
+      // WebAssembly.instantiateStreaming is not currently available in Safari
+      if (WebAssembly && !WebAssembly.instantiateStreaming) {
+        // polyfill
+        WebAssembly.instantiateStreaming = async (resp, importObject) => {
+          const source = await (await resp).arrayBuffer();
+          return await WebAssembly.instantiate(source, importObject);
+        };
       }
-    </script>
 
-    <base href="/" />
+      const go = new Go();
+      WebAssembly.instantiateStreaming(
+        fetch("https://api.tobiaswaagefeldballe.dk/api/assets/wasm/main.wasm", {
+          headers: {
+            "Content-Type": "application/wasm",
+          },
+        }),
+        go.importObject
+      ).then((result) => {
+        console.log("Running wasm");
+        go.run(result.instance);
+      });
+    } else {
+      console.log("WebAssembly is not supported in your browser");
+    }
+  </script>
 
-    <meta name="color-scheme" content="light dark" />
-    <meta
-      name="viewport"
-      content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="msapplication-tap-highlight" content="no" />
+  <base href="/" />
 
-    <link rel="icon" type="image/png" href="assets/icon/favicon.png" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="viewport"
+    content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
 
-    <!-- add to homescreen for ios -->
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-  </head>
+  <link rel="icon" type="image/png" href="assets/icon/favicon.png" />
 
-  <body>
-    <app-root></app-root>
-  </body>
+  <!-- add to homescreen for ios -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+</head>
+
+<body>
+  <app-root></app-root>
+</body>
+
 </html>

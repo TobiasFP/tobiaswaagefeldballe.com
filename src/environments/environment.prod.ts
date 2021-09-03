@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiurl: 'https://tobiaswaagefeldballe.dk/api',
+  apiurl: 'https://api.tobiaswaagefeldballe.dk/',
 };
