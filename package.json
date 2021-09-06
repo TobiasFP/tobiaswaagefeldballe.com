@@ -30,6 +30,7 @@
     "three-orbitcontrols": "^2.110.3",
     "three-orbitcontrols-ts": "^0.1.2",
     "tslib": "^2.2.0",
+    "twojs-ts": "^0.7.0-13",
     "web-component-essentials": "^0.0.4",
     "zone.js": "~0.11.4"
   },

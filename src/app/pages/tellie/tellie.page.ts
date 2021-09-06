@@ -84,7 +84,6 @@ export class TelliePage implements OnInit {
 
   onSearch(eventTarget: any) {
     this.searchQuery = eventTarget.value;
-    console.log(this.searchQuery);
     this.search(this.searchQuery);
   }
 
@@ -92,11 +91,7 @@ export class TelliePage implements OnInit {
     this.ngzone.run(() => {
       this.searchEngineService.searchData(searchString).subscribe(
         (lines) => {
-          console.log('Searched lines');
           this.hitList = lines;
-          this.hitList.Stories.forEach((line) => {
-            console.log('line: ' + line.Text);
-          });
         },
         (err) => {
           console.log('Error connecting?');

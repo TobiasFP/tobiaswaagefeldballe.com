@@ -25,7 +25,6 @@ export class Techs3dComponent implements OnInit {
     document.addEventListener("touchmove", (e: TouchEvent) => {
       e.preventDefault();
 
-      console.log('Ontouchevent');
       self.pos = (((360 * (e.targetTouches[0].pageX - window.innerWidth / 2) / window.innerWidth) * Math.PI / 180) / 2) - Math.PI / 2;
 
       self.mesh.rotation.y = self.pos;

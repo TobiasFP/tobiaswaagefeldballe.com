@@ -20,7 +20,6 @@ export class SpeedtestPage implements OnInit {
     const self = this;
     setTimeout(() => {
       this.speedtestJs(1).then((res) => {
-        console.log(res);
         self.timePassedJs = new Date().getTime() - beginning.getTime();
       });
     }, 300);
@@ -47,8 +46,8 @@ export class SpeedtestPage implements OnInit {
 
   async speedtestJs(iterations: number): Promise<number> {
     let sum: number = 0.0;
-    let array_length: number = 100000000;
-    let array: Array<number> = [];
+    const array_length: number = 100000000;
+    const array: Array<number> = [];
     for (let element = 0; element < array_length; element++) {
       array[element] = element;
     }

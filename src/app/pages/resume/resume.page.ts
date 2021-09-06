@@ -14,7 +14,6 @@ export class ResumePage implements OnInit {
   constructor(public modalController: ModalController) {}
 
   ngOnInit() {
-    console.log('Test');
   }
 
   ionViewDidEnter() {
