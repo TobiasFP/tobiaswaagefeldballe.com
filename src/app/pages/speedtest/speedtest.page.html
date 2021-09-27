@@ -11,19 +11,6 @@
 
 <ion-content>
   <ion-row>
-    <ion-col>
-      <ion-card>
-        <ion-card-content>
-          <h1> Beta </h1>
-          <p>
-            As my homepage is in beta, currently, only Firefox is supported for all the tests, this will be fixed within
-            a couple weeks.
-          </p>
-        </ion-card-content>
-      </ion-card>
-    </ion-col>
-  </ion-row>
-  <ion-row>
     <ion-col size-lg="4" offset-lg="1" size="12">
       <ion-card>
         <ion-card-content>
@@ -61,7 +48,7 @@
           <a href="https://github.com/TobiasFP/TobiasWaageFeldballe_speedtest_go"> See the code </a> <br />
           <p>
             This benchmark tests how the same code is executed on a single core of a
-            Raspberry Pi 4, run on the backend server in pure GoLang.
+            Raspberry Pi 3, run on the backend server in pure GoLang.
           </p>
           <ion-button (click)="runGoLang()">Test</ion-button>
           {{ timePassedGo }} ms
@@ -75,7 +62,7 @@
           <a href="https://github.com/TobiasFP/Speedtest_Fortran"> See the code </a> <br />
           <p>
             This benchmark tests how an implementation of the GoLang code rewritten
-            in Fortran is executed on a single core of a Raspberry Pi 4, run on the
+            in Fortran is executed on a single core of a Raspberry Pi 3, run on the
             backend server.
           </p>
           <ion-button (click)="runFortran()">Test</ion-button>

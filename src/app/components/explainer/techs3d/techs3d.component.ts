@@ -9,6 +9,7 @@ import * as THREE from 'three';
 export class Techs3dComponent implements OnInit {
   @ViewChild('canv', { static: true }) canv: ElementRef;
   @Input("img") img: string = "";
+  @Input("name") name: string = "";
 
   private scene: THREE.Scene;
   private camera: THREE.Camera;
@@ -68,6 +69,7 @@ export class Techs3dComponent implements OnInit {
     this.mesh = new THREE.Mesh(geometry, material);
     this.mesh.rotation.y = -Math.PI / 2;
     this.scene.add(this.mesh);
+    
 
     const animate = () => {
       requestAnimationFrame(animate);
