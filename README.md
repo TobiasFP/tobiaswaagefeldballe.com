@@ -1,3 +1,10 @@
+# Install and build 
+nvm install 16
+nvm use 16
+npm install -g @ionic/cli
+npm i
+ionic build --prod
+
 # tobiaswaagefeldballe.com
 tobiaswaagefeldballes website as a resume
 
