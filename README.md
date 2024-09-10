@@ -1,9 +1,10 @@
 # Install and build 
 nvm install 16
 nvm use 16
-npm install -g @ionic/cli
-npm i
-ionic build --prod
+npm install -g @ionic/cli yarn
+yarn install
+
+./push_to_osandweb.sh
 
 # tobiaswaagefeldballe.com
 tobiaswaagefeldballes website as a resume

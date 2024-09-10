@@ -12,10 +12,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/resume/resume.module').then( m => m.ResumePageModule)
   },
   {
-    path: 'tellie',
-    loadChildren: () => import('./pages/tellie/tellie.module').then( m => m.TelliePageModule)
-  },
-  {
     path: 'code',
     loadChildren: () => import('./pages/code/code.module').then( m => m.CodePageModule)
   },
